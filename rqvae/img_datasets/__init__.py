@@ -33,11 +33,11 @@ def create_dataset(config, is_eval=False, logger=None):
     root = config.dataset.get('root', None)
 
     if config.dataset.type == 'imagenet':
-        root = root if root else 'data/imagenet'
+        root = root if root else '/content/drive/MyDrive/RQ-VAE/data/imagenet'
         dataset_trn = ImageNet(root, split='train', transform=transforms_trn)
         dataset_val = ImageNet(root, split='val', transform=transforms_val)
     elif config.dataset.type == 'imagenet_u':
-        root = root if root else 'data/imagenet'
+        root = root if root else '/content/drive/MyDrive/RQ-VAE/data/imagenet'
 
         def target_transform(_):
             return 0
